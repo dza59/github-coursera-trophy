@@ -2,11 +2,13 @@
   "compilerOptions": {
     "sourceMap": true,
     "outDir": "build",
-    "rootDir": "src/",
+    "rootDir": "api/",
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "target": "es6",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "module": "CommonJS"
