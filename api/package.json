@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon",
-    "build": "npm install && rimraf ./build && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node build/index.js "
+    "build": "rimraf ./build && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
