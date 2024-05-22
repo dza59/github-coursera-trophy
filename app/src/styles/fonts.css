@@ -1,0 +1,16 @@
+/* src/styles/fonts.css */
+@font-face {
+  font-family: 'barbara';
+  src: url('../assets/BarbaraPersonalUseRegular-K73r7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'superwoobly';
+  src: url('../assets/SuperWoobly-8MJlz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
