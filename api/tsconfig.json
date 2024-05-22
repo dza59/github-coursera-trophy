@@ -2,7 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "outDir": "build",
-    "rootDir": "src",
+    "rootDir": "api",
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "target": "es6",
