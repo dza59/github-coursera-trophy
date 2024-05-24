@@ -1,30 +1,10 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
-import { JSDOM } from 'jsdom';
-
-interface Certification {
-  credentialID: string;
-  courseName: string;
-  issuedBy: string;
-  complete: string;
-  duration: string;
-  link: string;
-}
+import { Certification } from './interfaces';
+import { certificationSVG } from './svgTemplates';
 
 export function createSVG(cert: Certification): string {
-  // Define a complete SVG template with proper headers
-  return `
-    <svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
-      <rect x="10" y="10" width="580" height="180" fill="lightblue" stroke="black" stroke-width="2"/>
-      <text x="20" y="40" font-family="Arial" font-size="16" fill="black">Course Name: ${cert.courseName}</text>
-      <text x="20" y="70" font-family="Arial" font-size="16" fill="black">Issued By: ${cert.issuedBy}</text>
-      <text x="20" y="100" font-family="Arial" font-size="16" fill="black">Completion Date: ${cert.complete}</text>
-      <text x="20" y="130" font-family="Arial" font-size="16" fill="black">Hours: ${cert.duration}</text>
-      <a x="20" y="160" href="${cert.link}" target="_blank">
-        <text x="20" y="160"  font-size="16" font-family="Arial"  fill="black" >View Certification</text>
-      </a>
-    </svg>
-  `;
+  return certificationSVG(cert);
 }
 
 export async function fetchCertification(credentialID: string) {
@@ -53,6 +33,6 @@ export async function fetchCertification(credentialID: string) {
       credentialID,
       error.message,
     );
-    return null; // Return null in case of error to filter out later
+    return null;
   }
 }

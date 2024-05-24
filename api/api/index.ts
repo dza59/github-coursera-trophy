@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { fetchCertification, createSVG } from './helper';
 import cors from 'cors';
+import { Certification } from './interfaces';
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -9,15 +10,6 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-interface Certification {
-  credentialID: string;
-  courseName: string;
-  issuedBy: string;
-  complete: string;
-  duration: string;
-  link: string;
-}
 
 app.get('/certifications', async (req: Request, res: Response) => {
   const credentialIDs = req.query.ids

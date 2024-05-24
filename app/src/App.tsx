@@ -42,8 +42,7 @@ function App() {
     navigator.clipboard
       .writeText(generatedUrl)
       .then(() => {
-        setIsCopied(true); // Change state to indicate URL has been copied
-        alert('URL copied to clipboard!');
+        setIsCopied(true);
       })
       .catch((err) => {
         console.error('Failed to copy URL: ', err);
