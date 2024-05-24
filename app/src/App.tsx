@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
 import Modal from './components/Modal';
+import { Provider, ClapButton } from '@lyket/react';
 
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -124,6 +125,24 @@ function App() {
             </button>
           </div>
         )}
+      </div>
+
+      <div className='text-xl'>
+        <Provider
+          apiKey='pt_3dd5695aca265f2374708e0f81456d'
+          theme={{
+            colors: {
+              background: '#ffffff',
+              text: '#ffffff',
+              primary: 'rgba(255, 255, 210, 0.4)',
+            },
+          }}
+        >
+          <ClapButton
+            namespace='github-coursera-trophy'
+            id='github-coursera-trophyt-btn'
+          />
+        </Provider>
       </div>
     </div>
   );

@@ -13,4 +13,9 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      '@lyket/react': '@lyket/react/dist/index.js',
+    },
+  },
 });
