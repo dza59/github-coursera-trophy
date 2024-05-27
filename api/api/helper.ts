@@ -1,10 +1,20 @@
+import { Request, Response, NextFunction } from 'express';
 import axios from 'axios';
 import cheerio from 'cheerio';
-import { Certification } from './interfaces';
-import { certificationSVG } from './svgTemplates';
 
-export function createSVG(cert: Certification): string {
-  return certificationSVG(cert);
+const CACHE_MAX_AGE = {
+  CACHE_MAX_AGE: 3600,
+  REVALIDATE_TIME: 86400,
+};
+
+export function setDefaultHeaders(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void {
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.setHeader('Cache-Control', `public, max-age=${CACHE_MAX_AGE}`);
+  next();
 }
 
 export async function fetchCertification(credentialID: string) {
